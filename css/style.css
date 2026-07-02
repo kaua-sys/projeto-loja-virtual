@@ -1,0 +1,44 @@
+/*Importando a fonte das letras do google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Define as configurações em todos elementos da página*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+
+/*Criando varíaveis*/
+:root{
+    --cor01: #D4AF37;
+    --cor02: #191970;
+    --cor03: #2E8B57;
+    --branca:#ffffff;
+}
+
+/*Formatando a tag main pelo id geral*/
+#geral{
+    margin: 20px;
+}
+
+/*Formatando o cabeçalho*/
+#cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 60px;
+}
+
+/*Configurando menu na horizontal*/
+#menu ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+#menu ul img{
+    width: 25px;
+    height: 25px;
+}
