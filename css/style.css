@@ -11,7 +11,7 @@
 
 /*Criando varíaveis*/
 :root{
-    --cor01: #D4AF37;
+    --cor01: #0d295e;
     --cor02: #191970;
     --cor03: #2E8B57;
     --branca:#ffffff;
@@ -19,11 +19,14 @@
 
 /*Formatando a tag main pelo id geral*/
 #geral{
-    margin: 20px;
+    background-color: #F8FAFC;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 /*Formatando o cabeçalho*/
 #cabecalho{
+    background-color: #0F172A;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +36,7 @@
 
 /*Configurando menu na horizontal*/
 #menu ul{
+    color: #2563EB;
     display: flex;
     gap: 30px;
     list-style: none;
@@ -41,4 +45,185 @@
 #menu ul img{
     width: 25px;
     height: 25px;
+}
+
+/*Formatando Section pesquisa*/
+#pesquisa{
+    height: 200px;
+    background-color: var(--cor01);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-pesquisa{
+    width: 650px;
+    height: 80px;
+    background-color: var(--branca);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1.4em;
+}
+
+#pesquisa input::placeholder{
+    font-size: 1.3em;
+    font-style: italic;
+    color: var(--cor02);
+}
+
+/*Formatando os cards*/
+#cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tipo-card img{
+    width:150px;
+    height:200px;
+    object-fit:cover;
+}
+
+.card{
+        background: #FFFFFF;
+        color: #1E293B;
+        min-height: 450px;
+        padding: 20px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        transition: .3s;
+        cursor: pointer;
+}
+
+.card img{
+    width: 150px;
+    height: 200px;
+}
+
+.card p{
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin: 20px 0px;
+}
+
+.card h2{
+    color: #16A34A;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+
+.tipo-card{
+    background: #FFFFFF;
+    color: #1E293B;
+    width: 250px;
+    min-height: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.card button{
+    width: 200px;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d295e;
+    text-transform: uppercase;
+    color: #F59E0B;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a{
+    color: #F59E0B;
+}
+
+.btn-add{
+    display:block;
+    width:200px;
+    padding:10px;
+    background:#0d295e;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/*Formatar o rodapé*/
+#rodapé{
+    width: 100%;
+    height: 70px;
+    background-color: #0d295e;
+    color: var(--branca);
+    padding: 10px;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*Formatando Links*/
+#menu a:link{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+#menu a:visited{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+#menu a:hover{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+#menu a:active{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: yellow;
+}
+
+#tipo{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 30px auto;
+}
+
+.cordas img,
+.sopro img{
+    width:150px;
+    height:200px;
+    object-fit:cover;
+}
+
+.cordas a,
+.sopro a{
+    text-decoration: none;
+    color: inherit;
 }
