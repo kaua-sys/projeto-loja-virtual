@@ -1,2 +1,142 @@
-@import url(style.css)
+@import url(style.css);
 
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+
+#geral{
+    background-color: #f9fafc;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+#cabecalho{
+    background-color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 60px;
+}
+
+#menu ul{
+    color: #2563EB;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+#menu a:link{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+#menu a:visited{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+#menu a:hover{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+#menu a:active{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: rgb(49, 30, 111);
+}
+
+.input-01::placeholder,.input-02::placeholder,.input-03::placeholder,.input-04::placeholder{
+    color: #0d295e;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+#form-pessoa{
+    padding: 30px;
+    width: 700px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+
+#form h3{
+    background: #0F172A;
+    color: #F59E0B;
+    text-align: center;
+    padding: 18px;
+    font-size: 1.5em;
+}
+
+#form-pessoa input,
+#form-pessoa select{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #2563EB;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+button{
+    width: 160px;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button[type="submit"]{
+    background: #0D295E;
+    color: #F59E0B;
+}
+
+button[type="submit"]:hover{
+    background: #0F172A;
+}
+
+button[type="reset"]{
+    background: #2563EB;
+    color: white;
+}
+
+button[type="reset"]:hover{
+    background: #1D4ED8;
+}
+
+
+#form-pessoa label{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #0D295E;
+    font-weight: bold;
+}
+
+#not{
+    width: 18px;
+    height: 18px;
+}
