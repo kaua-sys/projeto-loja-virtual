@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha loja virtual de instrumentos</title>
+
+    <link rel="stylesheet" href="/css/style_cadastro.css">
+</head>
+<body>
+    <main id="geral">
+        <header id="cabecalho">
+            <div id="logo">
+                Sua Loja
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="/index.html">Inicial</a></li>
+                    <li><a href="paginas/cadastro.html">Cadastro</a></li>
+                    <li><a href="paginas/sobre.html">Sobre</a></li>
+                    <li><a href="paginas/login.html">Login</a></li>
+                    <li><a href="paginas/categorias.html">Categorias</a></li>
+                    <li><a href="paginas/carrinho"><img src="/imagens/carrinho.png" alt="carrinho"></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="form">
+            <h3>Cadastre seus dados pessoais</h3>
+
+            <form id="form-pessoa">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" class="input-01" required maxlength="40" placeholder="Digte seu nome">
+
+                <br>
+                <br>
+
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" name="sobrenome" id="sobrenome" class="input-01" required maxlength="40" placeholder="Digte seu sobrenome">
+
+                <br>
+                <br>
+
+                <label for="cpf">Cpf</label>
+                <input type="tel" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required >
+
+                <br>
+                <br>
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone" class="input-02" required maxlength="14" placeholder="Digte seu telefone">
+
+                <br>
+                <br>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="input-01" required maxlength="40" placeholder="Digte seu email">
+
+                <br>
+                <br>
+
+                <label for="data">Data de Nascimento</label>
+                <input type="date" name="data" id="data" class="input-03" required>
+
+                <br>
+                <br>
+
+                <label for="cep">CEP</label>
+                <input type="tel" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" required>
+        
+                <br>
+                <br>
+
+                <label for="logradouro">Logradouro</label>
+                <input type="text" name="logradouro" id="logradouro" class="input-01" required maxlength="40" placeholder="Digte seu logradouro">
+
+                <br>
+                <br>
+
+                <label for="numero">Número</label>
+                <input type="number" name="numero" id="number" class="input-03" required maxlength="9" placeholder="Digte o número da sua casa">
+
+                <br>
+                <br>
+
+                <label for="complemento">Complemento</label>
+                <input type="text" name="complemento" id="complemento" class="input-01" required maxlength="40" placeholder="Digte seu complemento">
+
+                <br>
+                <br>
+
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro" class="input-01" required maxlength="40" placeholder="Digte seu bairro">
+
+                <br>
+                <br>
+
+                <label for="cidade">Cidade</label>
+                <input type="text" name="cidade" id="cidade" class="input-01" required maxlength="40" placeholder="Digte sua cidade">
+
+                <br>
+                <br>
+
+                <label for="estado">Estado</label>
+                <select name="estado" id="estado" class="input-04" required placeholder="Escolha seu estado">
+                 <option value="AC">Acre</option>
+                 <option value="AL">Alagoas</option>
+                 <option value="AP">Amapá</option>
+                 <option value="AM">Amazonas</option>
+                 <option value="BA">Bahia</option>
+                 <option value="CE">Ceará</option>
+                 <option value="DF">Distrito Federal</option>
+                 <option value="ES">Espírito Santo</option>
+                 <option value="GO">Goiás</option>
+                 <option value="MA">Maranhão</option>
+                 <option value="MT">Mato Grosso</option>
+                 <option value="MS">Mato Grosso do Sul</option>
+                 <option value="MG">Minas Gerais</option>
+                 <option value="PA">Pará</option>
+                 <option value="PB">Paraíba</option>
+                 <option value="PR">Paraná</option>
+                 <option value="PE">Pernambuco</option>
+                 <option value="PI">Piauí</option>
+                 <option value="RJ">Rio de Janeiro</option>
+                 <option value="RN">Rio Grande do Norte</option>
+                 <option value="RS">Rio Grande do Sul</option>
+                 <option value="RO">Rodônia</option>
+                 <option value="RR">Roraima</option>
+                 <option value="SC">Santa Catarina</option>
+                 <option value="SP">São Paulo</option>
+                 <option value="SE">Sergipe</option>
+                 <option value="TO">Tocantins</option>
+                </select>
+
+               <br>
+               <br>
+
+               <label for="senha">Senha</label>
+               <input type="password" name="senha" id="senha" class="input-04" maxlength="6" required placeholder="Digite sua senha">
+
+               <br>
+               <br>
+
+               <label for="not"></label>
+               <input type="radio" name="not" id="not" class="input-not" value="M"> Deseja receber nossa notificações
+
+               <br>
+               <br>
+
+               <button type="submit">Cadastrar</button>
+               <button type="reset">Limpar</button>
+            </form>
+        </section>
+        <footer id="rodapé">
+            <h2>&copy 2026 SuaLoja S.A. Todos os direitos reservados</h2>
+            <p>Formas de pagamento: Pix, Cartões de Débito e Crédito</p>
+        </footer>
+
+    </main>
+    
+</body>
+</html>
