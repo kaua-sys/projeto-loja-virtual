@@ -109,6 +109,11 @@ button{
     transition: .3s;
 }
 
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(245,158,11,.7);
+}
+
 button[type="submit"]{
     background: #0D295E;
     color: #F59E0B;
@@ -141,3 +146,21 @@ button[type="reset"]:hover{
     gap: 8px;
 }
 
+#form-pessoa input,
+#form-pessoa select{
+    transition: .3s;
+}
+
+#form-pessoa input:hover,
+#form-pessoa select:hover{
+    transform: scale(1.01);
+}
+
+.input-not{
+    transition: .2s;
+    cursor: pointer;
+}
+
+.input-not:hover{
+    transform: scale(1.2);
+}
