@@ -85,16 +85,14 @@
     width: 250px;
 }
 
-#form-pessoa input,
+#form-pessoa input:not([type="radio"]),
 #form-pessoa select{
     width: 100%;
     padding: 12px;
-    border: 2px #2020a8;
-    border-style: double;
+    border: 2px double #2020a8;
     border-radius: 6px;
     font-size: 16px;
 }
-
 .botoes{
     display: flex;
     justify-content: space-between;
@@ -130,7 +128,7 @@ button[type="reset"]:hover{
 }
 
 
-#form-pessoa label{
+.input-01,.input-02,.input-03,.input-04{
     display: block;
     margin-top: 15px;
     margin-bottom: 6px;
@@ -138,7 +136,8 @@ button[type="reset"]:hover{
     font-weight: bold;
 }
 
-#not{
-    width: 18px;
-    height: 18px;
+.notificacao{
+    align-items: center;
+    gap: 8px;
 }
+
