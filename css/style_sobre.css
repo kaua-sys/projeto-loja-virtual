@@ -8,9 +8,9 @@
 }
 
 #geral{
-    background-color: #F8FAFC;
-    padding: 20px;
+    background-color: #0d295e;
     min-height: 100vh;
+    padding: 0;
 }
 
 #cabecalho{
@@ -28,7 +28,7 @@
     background-color: #0d295e;
     color: var(--branca);
     padding: 10px;
-    margin: 20px 0px;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,10 +41,28 @@
     color: black;
     height: 30px;
     padding: 20px;
+    background-color: #0d295e;
+    color: white;
 }
 
 #Sobre h3{
     font-size: 30px;
     background-color: #ffffff;
     color: black;
+}
+
+#Sobre h3{
+    width: 80%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 2px solid #0d295e;
+    border-radius: 10px;
+}
+#Sobre{
+    background-color: #0d295e;
+}
+
+body{
+    background-color: #0d295e;
 }
