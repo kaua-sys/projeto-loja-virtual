@@ -1,0 +1,76 @@
+@import url(style.css);
+
+#compra{
+    padding: 30px;
+}
+
+#compra h2{
+    background: orange;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.carrinho{
+    display: flex;
+    gap: 40px;
+}
+
+.produtos{
+    flex: 3;
+}
+
+.produto{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.produto img{
+    width: 80px;
+    height: 80px;
+}
+
+.resumo{
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.resumo input,
+.resumo button{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.resumo button{
+    width: 160px;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+    background-color: rgb(11, 11, 82);
+    color: #ffffff;
+}
+
+.resumo button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(245,158,11,.7);
+}
+
+.botoes{
+    display: flex;
+    gap: 10px;
+}
+
+.botoes button{
+    flex: 1;
+}
