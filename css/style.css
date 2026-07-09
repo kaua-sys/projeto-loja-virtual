@@ -35,7 +35,7 @@
 }
 
 /*Configurando menu na horizontal*/
-#menu ul{
+#menu ul, #menu-secoes{
     color: #2563EB;
     display: flex;
     gap: 30px;
@@ -257,4 +257,29 @@ a{
     margin: 20px 0;
     font-size: 1.2em;
     text-align: center;
+}
+
+/*Formatando o menu de Seções*/
+.link-secao:link, .link-secao:visited {
+    text-decoration: none;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: #F59E0B;
+}
+
+.link-secao:hover{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: yellow;
+}
+
+#secoes-produtos{
+    width: 100%;
+    min-height: 100px;
+    margin: 0px 0px;
+    background-color: #0d295e;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
