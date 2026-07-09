@@ -193,4 +193,4 @@ for (let i = 21; i <= 40; i++) {
         secao: "Acessórios"
     });
 }
-
+export{produtos};
