@@ -6,6 +6,7 @@ const sectionCards = document.querySelector('#cards')
 
 //Carregando os cards
 const lista_produtos = () =>{
+    return produtos
     //Limpando o section cards
     sectionCards.innerHTML = ''
  

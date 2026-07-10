@@ -172,16 +172,5 @@ const produtos = [
     },
 ];
 
-// Completa até 40 produtos
-for (let i = 20; i <= 40; i++) {
-    produtos.push({
-        id_compra: i,
-        descricao_produto: `Produto Musical ${i}`,
-        valor_unitario: Number((100 + i * 25.5).toFixed(2)),
-        unidade: "UN",
-        id_secao: 5,
-        caminho_imagem: `/imagens/produto${i}.jpg`,
-        secao: "Acessórios"
-    });
-}
+
 export{produtos};
