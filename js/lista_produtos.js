@@ -170,26 +170,17 @@ const produtos = [
         id_secao: 4,
         secao: "Percussão"
     },
-    {
-        id_compra: 20,
-        descricao_produto: "Tambor",
-        valor_unitario: 540.00,
-        unidade: "UN",
-        caminho_imagem: "/imagens/tambor.jpg",
-        id_secao: 4,
-        secao: "Percussão"
-    }
 ];
 
 // Completa até 40 produtos
-for (let i = 21; i <= 40; i++) {
+for (let i = 20; i <= 40; i++) {
     produtos.push({
         id_compra: i,
         descricao_produto: `Produto Musical ${i}`,
         valor_unitario: Number((100 + i * 25.5).toFixed(2)),
         unidade: "UN",
-        caminho_imagem: "/imagens/sem-imagem.jpg",
         id_secao: 5,
+        caminho_imagem: `/imagens/produto${i}.jpg`,
         secao: "Acessórios"
     });
 }
