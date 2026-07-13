@@ -6,7 +6,6 @@ const sectionCards = document.querySelector('#cards')
 
 //Carregando os cards
 const lista_produtos = () =>{
-    return produtos
     //Limpando o section cards
     sectionCards.innerHTML = ''
  
@@ -33,6 +32,10 @@ const lista_produtos = () =>{
     const btnCard = document.createElement('button')
     btnCard.setAttribute('class', 'btn-add')
     btnCard.innerHTML = 'Adicionar'
+
+    btnCard.addEventListener('click', () => {
+        window.location.href = '../paginas/carrinho.html';
+    });
 
     //Adicionando os elementos filhos aos divCard
     divCard.appendChild(imgCard)
