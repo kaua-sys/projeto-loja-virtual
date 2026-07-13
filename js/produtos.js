@@ -96,6 +96,18 @@ const filtroProduto = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao)
 }
 
+//Capturando os caracteres do input pesquisa
+//Pegando input do DOM
+const inputPesquisa = document.querySelector('#pesquisa')
+
+inputPesquisa.addEventListener('input',(evt)=>{
+    //Pegando o valor do input e converendo em minúsculos
+   let txtInput = evt.target.value.toLowerCase()
+
+   //Filtrando os cards a partir do filter e includes
+  montaCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes(txtInput)))
+})
+
 const montaCards = (objProduto) =>{
     //Limpando o section cards
     sectionCards.innerHTML = ''
@@ -124,6 +136,10 @@ const montaCards = (objProduto) =>{
     btnCard.setAttribute('class', 'btn-add')
     btnCard.innerHTML = 'Adicionar'
 
+    btnCard.addEventListener('click',()=>{
+        window.location.href = '../paginas/carrinho.html'
+    })
+
     //Adicionando os elementos filhos aos divCard
     divCard.appendChild(imgCard)
     divCard.appendChild(pCard)
@@ -134,3 +150,4 @@ const montaCards = (objProduto) =>{
     sectionCards.appendChild(divCard)
     })
 }
+
