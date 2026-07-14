@@ -1,7 +1,7 @@
 //Importando os produtos do arquivo lista_produtos.js
 import { produtos } from "./lista_produtos.js";
 //Importando a função para adicionar itens ao carrinho ao arquivo carrinho.js
-import { addItem } from "./carrinho.js";
+import { addItem} from "./carrinho.js";
 
 //Pegando elementos do DOM
 const sectionCards = document.querySelector('#cards')
