@@ -36,6 +36,7 @@ const lista_produtos = () => {
         btnCard.innerHTML = 'Adicionar'
 
         btnCard.addEventListener('click', () => {
+            addItem(elem)
             window.location.href = '../paginas/carrinho.html';
         });
 

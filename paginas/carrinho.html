@@ -14,187 +14,135 @@
 
 <body>
 
-<main id="geral">
+    <main id="geral">
 
-    <!-- Cabeçalho -->
-    <header id="cabecalho">
+        <!-- Cabeçalho -->
+        <header id="cabecalho">
 
-        <div id="logo">
-            <h1>Sua Loja</h1>
-        </div>
+            <div id="logo">
+                <h1>Sua Loja</h1>
+            </div>
 
-        <nav id="menu" aria-label="Menu principal">
-            <ul>
-                <li><a href="../index.html">Inicial</a></li>
-                <li><a href="/paginas/cadastro.html">Cadastro</a></li>
-                <li><a href="/paginas/sobre.html">Sobre</a></li>
-                <li><a href="/paginas/login.html">Login</a></li>
-                <li><a href="/paginas/categorias.html">Categorias</a></li>
+            <nav id="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="../index.html">Inicial</a></li>
+                    <li><a href="/paginas/cadastro.html">Cadastro</a></li>
+                    <li><a href="/paginas/sobre.html">Sobre</a></li>
+                    <li><a href="/paginas/login.html">Login</a></li>
+                    <li><a href="/paginas/categorias.html">Categorias</a></li>
 
-                <li>
-                    <a href="/paginas/carrinho.html" aria-label="Carrinho de compras">
-                        <img src="/imagens/carrinho.png" alt="Carrinho">
-                    </a>
-                </li>
-            </ul>
-        </nav>
+                    <li>
+                        <a href="/paginas/carrinho.html" aria-label="Carrinho de compras">
+                            <img src="/imagens/carrinho.png" alt="Carrinho">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-    </header>
+        </header>
 
-    <!-- Carrinho -->
-    <section id="compra">
+        <!-- Carrinho -->
+        <section id="compra">
 
-        <h2>🛒 Carrinho de Compras</h2>
+            <h2>🛒 Carrinho de Compras</h2>
 
-        <div class="carrinho">
+            <div class="carrinho">
 
-            <!-- Produtos -->
-            <section class="produtos">
+                <!-- Produtos -->
+                <section class="produtos" id="itens-carrinho">
 
-                <article class="produto">
+                    <!--
+                        Os produtos serão adicionados aqui pelo JavaScript.
+                    -->
 
-                    <img src="/imagens/violão.jpg" alt="Violão acústico">
+                </section>
 
-                    <div class="informacoes">
-                        <h3>Violão</h3>
-                        <p class="preco">R$ 396,10</p>
-                    </div>
+                <!-- Resumo -->
+                <aside class="resumo">
 
-                    <div class="acoes">
+                    <h3>Resumo do Pedido</h3>
 
-                        <label>
-                            Quantidade
-                            <input
-                                type="number"
-                                value="1"
-                                min="1"
-                                aria-label="Quantidade do Violão">
+                    <div class="cep">
+
+                        <label for="cep">
+                            CEP para entrega
                         </label>
 
-                        <button class="remover">
-                            Remover
+                        <input
+                            type="text"
+                            id="cep"
+                            placeholder="00000-000">
+
+                        <button id="btn-frete">
+                            Calcular Frete
                         </button>
 
                     </div>
-
-                </article>
-
-                <hr>
-
-                <article class="produto">
-
-                    <img src="/imagens/guitarra.jpg" alt="Guitarra elétrica">
-
-                    <div class="informacoes">
-                        <h3>Guitarra</h3>
-                        <p class="preco">R$ 1.288,00</p>
-                    </div>
-
-                    <div class="acoes">
-
-                        <label>
-                            Quantidade
-                            <input
-                                type="number"
-                                value="1"
-                                min="1"
-                                aria-label="Quantidade da Guitarra">
-                        </label>
-
-                        <button class="remover">
-                            Remover
-                        </button>
-
-                    </div>
-
-                </article>
-
-            </section>
-
-            <!-- Resumo -->
-            <aside class="resumo">
-
-                <h3>Resumo do Pedido</h3>
-
-                <div class="cep">
-
-                    <label for="cep">
-                        CEP para entrega
-                    </label>
-
-                    <input
-                        type="text"
-                        id="cep"
-                        placeholder="00000-000">
-
-                    <button>
-                        Calcular Frete
-                    </button>
-
-                </div>
-
-                <hr>
-
-                <div class="totais">
-
-                    <p>
-                        Produtos
-                        <strong id="valor-produtos">
-                            R$ 1.684,10
-                        </strong>
-                    </p>
-
-                    <p>
-                        Frete
-                        <strong id="valor-frete">
-                            R$ 30,00
-                        </strong>
-                    </p>
 
                     <hr>
 
-                    <p class="total">
-                        Total
-                        <strong id="valor-total">
-                            R$ 1.714,10
-                        </strong>
-                    </p>
+                    <div class="totais">
 
-                </div>
+                        <p>
+                            Produtos
+                            <strong id="valor-produtos">
+                                R$ 0,00
+                            </strong>
+                        </p>
 
-                <div class="botoes">
+                        <p>
+                            Frete
+                            <strong id="valor-frete">
+                                R$ 0,00
+                            </strong>
+                        </p>
 
-                    <button class="continuar">
-                        ← Continuar Comprando
-                    </button>
+                        <hr>
 
-                    <button class="finalizar">
-                        Finalizar Compra
-                    </button>
+                        <p class="total">
+                            Total
+                            <strong id="valor-total">
+                                R$ 0,00
+                            </strong>
+                        </p>
 
-                </div>
+                    </div>
 
-            </aside>
+                    <div class="botoes">
 
-        </div>
+                        <button
+                            class="continuar"
+                            onclick="window.location.href='../index.html'">
+                            ← Continuar Comprando
+                        </button>
 
-    </section>
+                        <button class="finalizar">
+                            Finalizar Compra
+                        </button>
 
-    <!-- Rodapé -->
-    <footer id="rodape">
+                    </div>
 
-        <h2>&copy; 2026 SuaLoja S.A.</h2>
+                </aside>
 
-        <p>Todos os direitos reservados.</p>
+            </div>
 
-        <p>
-            Formas de pagamento:
-            Pix, Cartões de Débito e Crédito.
-        </p>
+        </section>
 
-    </footer>
+        <!-- Rodapé -->
+        <footer id="rodape">
 
-</main>
+            <h2>&copy; 2026 SuaLoja S.A.</h2>
+
+            <p>Todos os direitos reservados.</p>
+
+            <p>
+                Formas de pagamento:
+                Pix, Cartões de Débito e Crédito.
+            </p>
+
+        </footer>
+
+    </main>
 
 </body>
 
