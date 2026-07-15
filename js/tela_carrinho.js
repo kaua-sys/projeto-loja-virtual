@@ -59,22 +59,25 @@ const montaTelaCarrinho = (objListaItens = []) => {
         inputQuantidade.setAttribute("id", `quant${i}`);
         inputQuantidade.setAttribute("class", "input-item");
         inputQuantidade.setAttribute("min", "1");
-        inputQuantidade.setAttribute("value", "1");
+        inputQuantidade.setAttribute("value", elem.quantidade);
 
         divQuant.appendChild(inputQuantidade);
 
         // Total do item
         const pTotal = document.createElement("p");
-
+        
+        //Adicionado o botão remover 
         const btnRemover = document.createElement("button");
         btnRemover.setAttribute("class", "remover");
         btnRemover.textContent = "Remover";
 
         btnRemover.addEventListener("click", () => {
+            if(confirm(`Tem certeza que deseja remover ${elem.descricao_produto}`))
             removeItem(i);
             montaTelaCarrinho(listItens());
         });
 
+        //Atualizando o valor total
         const atualizaTotal = () => {
             const total = elem.valor_unitario * Number(inputQuantidade.value);
 
