@@ -1,27 +1,35 @@
-// Importando a função listItens do carrinho.js
-import { listItens, removeItem } from "./carrinho.js";
+//Importando as funções do carrinho.js
+import { listItens, removeItem, updateQuantidade } from "./carrinho.js";
 
-// Montar tela do Carrinho
+//Função para montar a tela do carrinho
 const montaTelaCarrinho = (objListaItens = []) => {
 
     const sectionItensCarrinho = document.querySelector("#itens-carrinho");
 
-    // Limpa a lista apenas uma vez
+    //Limpando a lista de produtos
     sectionItensCarrinho.innerHTML = "";
 
-    // Carrinho vazio
+    //Verificando se o carrinho está vazio
     if (objListaItens.length === 0) {
         sectionItensCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
         return;
     }
 
+    let totalCarrinho = 0;
+
+    //Calculando o valor total do carrinho
+    objListaItens.forEach((elem) => {
+        totalCarrinho += elem.valor_unitario * elem.quantidade;
+    });
+
+    //Percorrendo os itens do carrinho
     objListaItens.forEach((elem, i) => {
 
-        // Produto
+        //Criando o produto
         const sectionItem = document.createElement("section");
         sectionItem.setAttribute("class", "produto");
 
-        // Imagem
+        //Criando a imagem do produto
         const divImgItem = document.createElement("div");
         divImgItem.setAttribute("class", "img-item");
 
@@ -31,7 +39,7 @@ const montaTelaCarrinho = (objListaItens = []) => {
 
         divImgItem.appendChild(imgItem);
 
-        // Descrição
+        //Criando a descrição do produto
         const divDescricaoItens = document.createElement("div");
         divDescricaoItens.setAttribute("class", "descricoes-itens");
 
@@ -40,7 +48,7 @@ const montaTelaCarrinho = (objListaItens = []) => {
 
         divDescricaoItens.appendChild(h3);
 
-        // Valores
+        //Criando a área de valores
         const divValores = document.createElement("div");
         divValores.setAttribute("class", "valores");
 
@@ -49,7 +57,7 @@ const montaTelaCarrinho = (objListaItens = []) => {
             .toFixed(2)
             .replace(".", ",")}`;
 
-        // Quantidade
+        //Criando o campo de quantidade
         const divQuant = document.createElement("div");
         divQuant.setAttribute("class", "input-quantidade");
 
@@ -63,21 +71,23 @@ const montaTelaCarrinho = (objListaItens = []) => {
 
         divQuant.appendChild(inputQuantidade);
 
-        // Total do item
+        //Criando o total do item
         const pTotal = document.createElement("p");
-        
-        //Adicionado o botão remover 
+
+        //Criando o botão remover
         const btnRemover = document.createElement("button");
         btnRemover.setAttribute("class", "remover");
         btnRemover.textContent = "Remover";
 
+        //Removendo o produto do carrinho
         btnRemover.addEventListener("click", () => {
-            if(confirm(`Tem certeza que deseja remover ${elem.descricao_produto}`))
-            removeItem(i);
-            montaTelaCarrinho(listItens());
+            if (confirm(`Tem certeza que deseja remover ${elem.descricao_produto}`)) {
+                removeItem(i);
+                montaTelaCarrinho(listItens());
+            }
         });
 
-        //Atualizando o valor total
+        //Atualizando o total do produto
         const atualizaTotal = () => {
             const total = elem.valor_unitario * Number(inputQuantidade.value);
 
@@ -88,21 +98,36 @@ const montaTelaCarrinho = (objListaItens = []) => {
 
         atualizaTotal();
 
-        inputQuantidade.addEventListener("input", atualizaTotal);
+        //Atualizando a quantidade do produto
+        inputQuantidade.addEventListener("input", () => {
+            atualizaTotal();
 
-        // Montagem
+            updateQuantidade(
+                elem.id_compra,
+                Number(inputQuantidade.value)
+            );
+        });
+
+        //Exibindo o total do carrinho
+        const valorProdutos = document.querySelector("#valor-produtos");
+
+        valorProdutos.textContent = `R$ ${totalCarrinho.toFixed(2).replace(".", ",")}`;
+
+        //Montando a área de valores
         divValores.appendChild(pItem);
         divValores.appendChild(divQuant);
         divValores.appendChild(pTotal);
-        divValores.appendChild(btnRemover)
+        divValores.appendChild(btnRemover);
 
+        //Montando o produto
         sectionItem.appendChild(divImgItem);
         sectionItem.appendChild(divDescricaoItens);
         sectionItem.appendChild(divValores);
 
+        //Adicionando o produto ao carrinho
         sectionItensCarrinho.appendChild(sectionItem);
     });
 };
 
-// Carrega os itens do carrinho
+//Carregando os itens do carrinho
 montaTelaCarrinho(listItens());
