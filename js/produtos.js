@@ -1,64 +1,61 @@
 //Importando os produtos do arquivo lista_produtos.js
 import { produtos } from "./lista_produtos.js";
 //Importando a função para adicionar itens ao carrinho ao arquivo carrinho.js
-import { addItem} from "./carrinho.js";
+import { itemAdd } from "./carrinho.js";
 
 //Pegando elementos do DOM
 const sectionCards = document.querySelector('#cards')
 
-//Carregando os cards
+//Função que carrega todos os produtos na tela
 const lista_produtos = () => {
     //Limpando o section cards
     sectionCards.innerHTML = ''
 
-    //Pecorrendo o array de produtos
+    //Percorrendo o array de produtos
     produtos.forEach((elem, i) => {
-        //Criando o elemento div e definindo o atributo card
+        //Criando o card do produto
         const divCard = document.createElement('div')
         divCard.setAttribute('class', 'card')
 
-        //Criando o elemento img e definindo os atributos sc e alt os valores do caminho das imagens e a descrição dos produtos
+        //Criando a imagem do produto
         const imgCard = document.createElement('img')
         imgCard.setAttribute('src', elem.caminho_imagem)
         imgCard.setAttribute('alt', elem.descricao_produto)
 
-        //Criando o elemento p e atribuido a descrição dos produtos
+        //Criando a descrição do produto
         const pCard = document.createElement('p')
         pCard.innerHTML = elem.descricao_produto
 
-        //Criadno o elemento h2 e atribuindo o valor unitário deixando em duas casas decimais e substituindo ponto por vírgulo
+        //Criando o preço do produto
         const h2Card = document.createElement('h2')
         h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
 
-        //Criando o elemento button e definindo os atributos class e a descrição adicionar
+        //Criando o botão de adicionar
         const btnCard = document.createElement('button')
         btnCard.setAttribute('class', 'btn-add')
         btnCard.innerHTML = 'Adicionar'
 
+        //Adicionando o produto ao carrinho e redirecionando
         btnCard.addEventListener('click', () => {
-            addItem(elem)
+            itemAdd(elem)
             window.location.href = '../paginas/carrinho.html';
         });
 
-        //Adicionando os elementos filhos aos divCard
+        //Adicionando os elementos ao card
         divCard.appendChild(imgCard)
         divCard.appendChild(pCard)
         divCard.appendChild(h2Card)
         divCard.appendChild(btnCard)
 
-        //Adicionando o divCard a section cards
+        //Adicionando o card na página
         sectionCards.appendChild(divCard)
-
-
     })
-
-
 }
 
-//Chamando a Função listarProdutos
+//Chamando a função
 lista_produtos()
 
-//Montando os menus seções
+//Criando o menu de seções sem repetir categorias
 const menuSecoes = () => {
     const mapSecoes = new Map()
 
@@ -66,13 +63,14 @@ const menuSecoes = () => {
         mapSecoes.set(elem.id_secao, elem)
     })
 
+    //Convertendo o Map em array
     const secoesFiltrada = Array.from(mapSecoes.values())
 
-    //Retornando o array selecionado
+    //Retornando as seções
     return secoesFiltrada
 }
 
-//Função para Inserir os menus na lista
+//Carregando o menu de seções
 const carregaSecoes = () => {
     const ulMenuSecoes = document.querySelector('#menu-secoes')
 
@@ -85,76 +83,72 @@ const carregaSecoes = () => {
         aMenu.setAttribute('class', 'link-secao')
         aMenu.innerHTML = elem.secao
 
+        //Filtrando os produtos da seção clicada
         aMenu.addEventListener('click', () => {
             montaCards(filtroProduto(elem.id_secao))
         })
 
         liMenu.appendChild(aMenu)
-
         ulMenuSecoes.appendChild(liMenu)
     })
-
 }
 
 carregaSecoes()
 
+//Filtra os produtos pela seção
 const filtroProduto = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao)
 }
 
-//Capturando os caracteres do input pesquisa
-//Pegando input do DOM
+//Pegando o campo de pesquisa
 const inputPesquisa = document.querySelector('#pesquisa')
 
+//Pesquisando produtos conforme o usuário digita
 inputPesquisa.addEventListener('input', (evt) => {
-    //Pegando o valor do input e converendo em minúsculos
+    //Texto digitado em minúsculo
     let txtInput = evt.target.value.toLowerCase()
 
-    //Filtrando os cards a partir do filter e includes
+    //Exibindo apenas os produtos encontrados
     montaCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes(txtInput)))
 })
 
+//Função que monta os cards filtrados
 const montaCards = (objProduto) => {
-    //Limpando o section cards
+    //Limpando a área dos cards
     sectionCards.innerHTML = ''
 
-    //Pecorrendo o array de produtos
+    //Percorrendo os produtos filtrados
     objProduto.forEach((elem, i) => {
-        //Criando o elemento div e definindo o atributo card
         const divCard = document.createElement('div')
         divCard.setAttribute('class', 'card')
 
-        //Criando o elemento img e definindo os atributos sc e alt os valores do caminho das imagens e a descrição dos produtos
         const imgCard = document.createElement('img')
         imgCard.setAttribute('src', elem.caminho_imagem)
         imgCard.setAttribute('alt', elem.descricao_produto)
 
-        //Criando o elemento p e atribuido a descrição dos produtos
         const pCard = document.createElement('p')
         pCard.innerHTML = elem.descricao_produto
 
-        //Criadno o elemento h2 e atribuindo o valor unitário deixando em duas casas decimais e substituindo ponto por vírgulo
         const h2Card = document.createElement('h2')
         h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
 
-        //Criando o elemento button e definindo os atributos class e a descrição adicionar
         const btnCard = document.createElement('button')
         btnCard.setAttribute('class', 'btn-add')
         btnCard.innerHTML = 'Adicionar'
 
+        //Adicionando o produto ao carrinho
         btnCard.addEventListener('click', () => {
-            addItem(elem)
+            itemAdd(elem)
             window.location.href = '../paginas/carrinho.html'
         })
 
-        //Adicionando os elementos filhos aos divCard
+        //Montando o card
         divCard.appendChild(imgCard)
         divCard.appendChild(pCard)
         divCard.appendChild(h2Card)
         divCard.appendChild(btnCard)
 
-        //Adicionando o divCard a section cards
+        //Exibindo o card na tela
         sectionCards.appendChild(divCard)
     })
 }
-
