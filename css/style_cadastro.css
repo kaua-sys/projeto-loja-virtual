@@ -164,3 +164,7 @@ button[type="reset"]:hover{
 .input-not:hover{
     transform: scale(1.2);
 }
+
+#oculto{
+    display: none;
+}

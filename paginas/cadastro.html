@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/css/style_cadastro.css">
     <link rel="shortcut icon" href="/imagens/Harmonia musical.png" type="image/jpg">
+    <script src="../js/consulta_cep.js" defer></script>
 </head>
 <body>
     <main id="geral">
@@ -66,10 +67,11 @@
 
                 <br>
                 <br>
-
+             
                 <label for="cep">CEP</label>
-                <input type="tel" id="cep" name="cep" placeholder="00000-000" required>
-        
+                <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+            <div id="oculto">
+
                 <br>
                 <br>
 
@@ -136,7 +138,7 @@
 
                <br>
                <br>
-
+             </div>
                <label for="senha">Senha</label>
                <input type="password" name="senha" id="senha" class="input-04" maxlength="6" required placeholder="Digite sua senha">
 
