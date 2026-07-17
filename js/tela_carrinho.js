@@ -91,7 +91,7 @@ const montaTelaCarrinho = (objListaItens = []) => {
         const atualizaTotal = () => {
             const total = elem.valor_unitario * Number(inputQuantidade.value);
 
-            pTotal.textContent = `Total: R$ ${total
+            pTotal.textContent = `R$${total
                 .toFixed(2)
                 .replace(".", ",")}`;
         };
@@ -100,18 +100,27 @@ const montaTelaCarrinho = (objListaItens = []) => {
 
         //Atualizando a quantidade do produto
         inputQuantidade.addEventListener("input", () => {
-            atualizaTotal();
 
+            const quantidade = Number(inputQuantidade.value);
+        
+            atualizaTotal();
+        
             updateQuantidade(
                 elem.id_compra,
-                Number(inputQuantidade.value)
+                quantidade
             );
+        
+            montaTelaCarrinho(listItens());
         });
-
         //Exibindo o total do carrinho
         const valorProdutos = document.querySelector("#valor-produtos");
 
         valorProdutos.textContent = `R$ ${totalCarrinho.toFixed(2).replace(".", ",")}`;
+        
+        //Total do carrinho dos produtos com o frete
+        const total = document.querySelector("#valor-total");
+
+         total.innerHTML = `R$ ${totalCarrinho.toFixed(2).replace(".",",")}` 
 
         //Montando a área de valores
         divValores.appendChild(pItem);
